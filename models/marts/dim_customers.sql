@@ -1,8 +1,5 @@
-{{
-    config(
-        materialized = "table"
-    )
-}}
+-- config macro from jinja - not sql code
+{{config(materialized = "table")}}
 
 WITH customers AS(
     SELECT * 
