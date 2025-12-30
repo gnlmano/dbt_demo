@@ -40,6 +40,9 @@ models:
     # Applies to all files under models/example/
     staging: # Staging models should typically be views, we dont want new tables piling up in our DB
     # + indicates that it's a property and not a folder
-      +materialized: view
+      jaffle_shop:
+        +materialized: view
+      stripe:
+        +materialized: view
     marts:
       +materialized: table #marts are typically tables
