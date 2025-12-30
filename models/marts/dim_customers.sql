@@ -38,6 +38,14 @@ final as (
         coalesce(customer_orders.number_of_orders, 0) as number_of_orders
     from customers
     left join customer_orders using (customer_id)
-)
+
+),
+
+lifetime_value AS (
+SELECT CUSTOMER_ID, sum(AMOUNT) lifetime_value
+FROM {{ref("fct_orders")}}
+GROUP BY CUSTOMER_ID)
 
 select * from final
+LEFT JOIN lifetime_value
+USING (CUSTOMER_ID)
