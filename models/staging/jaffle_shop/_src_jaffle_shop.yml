@@ -1,0 +1,18 @@
+sources:
+  - name: jaffle_shop
+    database: raw  
+    schema: jaffle_shop  
+    config:
+      freshness: #(__freshness)
+        warn_after:
+          count: 12
+          period: hour
+        error_after:
+          count: 10
+          period: day
+      loaded_at_field: _etl_loaded_at # Will check last load time
+    tables:
+      - name: orders
+        
+      - name: customers
+        freshness: null
