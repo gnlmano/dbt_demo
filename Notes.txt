@@ -6,6 +6,16 @@ DBT build - runs and tests models in logical sequence
     1st runs test on sources
     2nd rns on models - then goes to any tests on that models
     And continues
-Ensures that bad data never reaches the fact and dimension tables.
+** Ensures that bad data never reaches the fact and dimension tables.
+
+Therefore. DBT build is four runs:
+    dbt run
+    dbt test
+    dbt seed (loads csv data into warehouse tables)
+    dbt snapshot (tracks slowly changing dimensions in the dat)
+
+Documentation - 
+sources - add what the data is from and what it means
+models - add what the model does
 
 """
