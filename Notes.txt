@@ -1,0 +1,11 @@
+"""
+DBT run - builds all models in DAG models - staging to final dashboards
+DBT -test - runs all the tests
+Need to stop pipeline immediately if a test fails
+DBT build - runs and tests models in logical sequence
+    1st runs test on sources
+    2nd rns on models - then goes to any tests on that models
+    And continues
+Ensures that bad data never reaches the fact and dimension tables.
+
+"""
